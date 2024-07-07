@@ -1,0 +1,9 @@
+<div class="search-form">
+    <div>
+        <!-- keyup.enter to allow search on enter click and (input) to allow the search while typing -->
+        <input #myInput type="text" placeholder="Search for user by id ..."
+            class="au-input au-input-xl input-search rounded-3xl w-full px-5 py-2" (keyup.enter)="doSearch(myInput.value)" 
+            (input)="doSearch(myInput.value)">
+    </div>
+    
+</div>

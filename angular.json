@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reqres-user-card-listing": {
+    "user-card-listing": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/reqres-user-card-listing",
+            "outputPath": "dist/user-card-listing",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,7 +29,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -69,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "reqres-user-card-listing:build:production"
+              "buildTarget": "user-card-listing:build:production"
             },
             "development": {
-              "buildTarget": "reqres-user-card-listing:build:development"
+              "buildTarget": "user-card-listing:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +94,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+               "src/assets"
             ],
             "styles": [
               "src/styles.scss"

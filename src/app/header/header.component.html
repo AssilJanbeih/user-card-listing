@@ -1,0 +1,50 @@
+<nav class="bg-transparent overlay z-index-2">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 bg-blue-300">
+        <div class="flex h-20 items-center justify-between">
+            <div class="flex items-center">
+                <h1 class="text-3xl font-bold tracking-tight text-white"><a routerLink="/users">User Listing Project</a></h1>
+                <div class="hidden md:block">
+                    <div class="ml-20 flex w-64 items-baseline space-x-10">
+                        <app-search #searchComponent></app-search>
+                    </div>
+                </div>
+            </div>
+            <div class="-mr-2 flex-none md:hidden">
+                <!-- Mobile menu button -->
+                <button type="button" (click)="toggleBurgerMenu()"
+                    class="relative inline-flex items-center justify-center rounded-md bg-blue-400 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Menu open: "hidden", Menu closed: "block" -->
+                    <svg [ngClass]="{'block' : !isOpen, 'hidden': isOpen}" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="white" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <!-- Menu open: "block", Menu closed: "hidden" -->
+                    <svg [ngClass]="{'hidden' : !isOpen ,'block' : isOpen, }" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="white" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div [ngClass]="{'md:hidden' : !isOpen, 'transition ease-out duration-100 transform opacity-100 scale-100 bg-blue-300 overlay absolute z-10': isOpen, 'transition ease-in duration-75 transform opacity-0 scale-95 bg-transparent overlay absolute z-10': !isOpen}"
+        id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+            <!-- Current: "bg-blue-300 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="text-white block rounded-md px-3 py-2 text-base font-medium mb-2"
+                aria-current="page">Home</a>
+            <app-search #searchComponent></app-search>
+        </div>
+        <div class="border-t border-gray-700 pb-3 pt-4">
+            <div class="flex items-center px-5">
+            </div>
+            
+        </div>
+    </div>
+</nav>
